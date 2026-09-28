@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--bg:#F7F8FC;--surface:#fff;--ink:#101A3D;--mute:#535E85;--line:#DCE2F0;--brand:#101A3D;--brand-ink:#fff;--gold:#C79A3B;--soft:#E9EEF9;--red:#B8262D}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1230;--surface:#131C46;--ink:#EEF2FF;--mute:#A8B3DA;--line:#26346B;--brand:#9DB2FF;--brand-ink:#0B1230;--gold:#E0B453;--soft:#151F4B;--red:#E5483A}}
+html{scroll-behavior:smooth;font-size:15px}
+@media (min-width:1024px){html{font-size:16px}}
+body{@apply bg-bg text-ink font-sans leading-relaxed antialiased}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@layer components {
+  .btn,.btn2,.btn-red,.btn-ghost,.btn-white{@apply inline-flex items-center justify-center rounded-full px-6 py-3 text-center text-[0.95rem] font-semibold tracking-wide transition duration-200 motion-safe:hover:-translate-y-0.5}
+  .btn{@apply bg-brand text-brand-ink shadow-[0_8px_20px_-10px_rgba(16,26,61,.6)] hover:shadow-[0_12px_24px_-10px_rgba(16,26,61,.7)]}
+  .btn2{@apply border bg-transparent text-brand hover:border-brand;border-color:color-mix(in srgb,var(--brand) 30%,transparent)}
+  .btn2:hover{background:color-mix(in srgb,var(--brand) 6%,transparent)}
+  .btn-red{background:linear-gradient(180deg,#CB323A,#A81F27);@apply text-white shadow-[0_8px_20px_-8px_rgba(184,38,45,.7)] hover:shadow-[0_14px_26px_-8px_rgba(184,38,45,.8)]}
+  .btn-ghost{@apply border border-white/40 bg-white/5 text-white backdrop-blur-sm hover:border-white hover:bg-white/15}
+  .btn-white{@apply bg-white text-[#8E1F1F] shadow-[0_8px_20px_-10px_rgba(0,0,0,.5)]}
+  .btn-sm{@apply !px-4 !py-2 !text-sm}
+  .card{@apply rounded-xl border border-line bg-surface}
+  .input{@apply w-full rounded-lg border border-line bg-surface px-3 py-2.5 text-ink}
+  .arch{border-radius:9999px 9999px 1.25rem 1.25rem}
+}
